@@ -1,18 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:Style="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.i.bestcalculator.MainActivity">
+    android:orientation="vertical"
+    android:padding="0dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:layout_weight="4"
+        android:background="@color/colorPrimaryDark">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="monospace"
+            android:text="= 0"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="22dp"
+            Style:layout_constraintBottom_toBottomOf="parent"
+            Style:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="monospace"
+            android:text="0"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="40dp"
+            Style:layout_constraintBottom_toTopOf="@+id/textView"
+            Style:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text=""
+            android:textColor="@android:color/darker_gray"
+            android:textSize="40dp"
+            Style:layout_constraintBottom_toBottomOf="@+id/textView2"
+            Style:layout_constraintEnd_toStartOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="monospace"
+            android:text="0"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="30dp"
+            Style:layout_constraintBottom_toTopOf="@+id/textView2"
+            Style:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        tools:background="@android:color/white">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="4"
+            android:rowCount="5">
+
+            <Button android:text="AC" />
+
+            <Button android:text="back" />
+
+            <Button
+                android:id="@+id/divide"
+                android:text="/" />
+
+            <Button
+                android:id="@+id/multiply"
+                android:text="*" />
+
+            <Button
+                android:id="@+id/num7"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/num8"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/num9"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/minus"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/num4"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/num5"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/num6"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/plus"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/num1"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/num2"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/num3"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/equals"
+                android:layout_gravity="fill"
+                android:layout_rowSpan="2"
+                android:text="=" />
+
+            <Button
+                android:id="@+id/percentage"
+                android:text="%" />
+
+            <Button
+                android:id="@+id/num0"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/dot"
+                android:text="." />
+
+        </GridLayout>
+    </FrameLayout>
+
+</LinearLayout>

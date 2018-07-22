@@ -18,6 +18,22 @@ public class Calculator {
         this.calculatorListener = calculatorListener;
     }
 
+    public float getCurrentValue() {
+        return currentValue;
+    }
+
+    public float getAppliedValue() {
+        return appliedValue;
+    }
+
+    public float getCalculatedValue() {
+        return calculatedValue;
+    }
+
+    public OperationType getOperationType() {
+        return operationType;
+    }
+
     public void addDigit(int digit) {
         appliedValue = operationForAppliedValue.calculate(appliedValue, digit);
         calculatedValue = operationForCalculatedValue.calculate(currentValue, appliedValue);
@@ -32,12 +48,16 @@ public class Calculator {
         switch (operationType) {
             case Plus:
                 operationForCalculatedValue = new PlusOperation();
+                break;
             case Minus:
                 operationForCalculatedValue = new MinusOperation();
+                break;
             case Multiplication:
                 operationForCalculatedValue = new MultiplicationOperation();
+                break;
             case Division:
                 operationForCalculatedValue = new DivisionOperation();
+                break;
             default:
             case Set:
                 operationForCalculatedValue = new SetOperation();
